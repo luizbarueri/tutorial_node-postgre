@@ -4,9 +4,6 @@
   "description": "Tutorial encontrado na internet LuizTools",
   "main": "index.js",
   "type": "module",
-  "engines": {
-      "node": "14.x"
-  },
   "scripts": {
     "start": "node index.js"
   },
