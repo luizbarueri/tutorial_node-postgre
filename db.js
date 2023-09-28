@@ -28,5 +28,17 @@ async function selectCustomers() {
     return res.rows;
 }
  
-module.exports = { selectCustomers }
+async function selectCustomer(id) {
+    const client = await connect();
+    const res = await client.query('SELECT * FROM cadcli WHERE ID=$1', [id]);
+    return res.rows;
+}
+ 
+async function deleteCustomer(id) {
+    const client = await connect();
+    return await client.query('DELETE FROM cadcli where id=$1;', [id]);
+    
+}
+ 
+module.exports = { selectCustomers, selectCustomer, deleteCustomer }
 
